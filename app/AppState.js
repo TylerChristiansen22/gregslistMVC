@@ -3,6 +3,7 @@ import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
 import { isValidProp } from "./utils/isValidProp.js"
 import { loadState } from "./utils/Store.js"
+import { House } from "./models/House.js"
 
 class ObservableAppState extends EventEmitter {
   page = ''
@@ -12,6 +13,26 @@ class ObservableAppState extends EventEmitter {
 
 
   cars = loadState('cars', [Car])
+  houses = [
+    new House({
+      year: '1974',
+      bedrooms: 3,
+      bathrooms: 2.5,
+      sqft: 1400,
+      price: 375000,
+      description: 'Newly renovated mid-century modern home',
+      imgUrl: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8MyUyMGJlZHJvb20lMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+    }),
+    new House({
+      year: '2000',
+      bedrooms: 2,
+      bathrooms: 1.5,
+      sqft: 1000,
+      price: 150000,
+      description: 'Smaller house but at an affordable price',
+      imgUrl: 'https://images.unsplash.com/photo-1573003139034-1693385f21a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNtYWxsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+    })
+  ]
 
   // cars = [
 
